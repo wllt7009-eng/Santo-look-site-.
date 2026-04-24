@@ -1,125 +1,282 @@
 /* ==========================================================================
-   style.css - Estilos Globais e Variáveis da Santo Look
-   Objetivo: Definir a identidade visual Premium, Glamour e Feminina.
+   SANTO LOOK - CSS PREMIUM (GLOW & FLUID)
    ========================================================================== */
 
-/* 1. Importação de Fontes (Elegância e Modernidade) */
-/* Serifada para Títulos: Cormorant Garamond (substituindo Playfair para mais 'glamour') */
-/* Sans-Serif para Corpo: Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
 
-/* 2. Variáveis de Design (Paleta de Cores e Tipografia) */
 :root {
-    /* Cores Principais (Baseadas no Prompt e Logo) */
-    --cor-fundo: #FAFAF8;       /* Off-white cremoso para fundo */
-    --cor-texto-escuro: #1A1A1A; /* Quase preto para legibilidade premium */
-    --cor-primaria: #D4A396;      /* Rosa Seco Sofisticado (do logo) */
-    --cor-primaria-claro: #E8CAC1; /* Tom mais claro do rosa para hovers */
-    --cor-destaque: #C48F82;     /* Tom mais escuro do rosa para detalhes */
-    
-    /* Cores de Botão (WhatsApp e CTAs) */
-    --cor-whatsapp: #25D366;
-    --cor-whatsapp-hover: #1DA851;
-    --gradiente-premium: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-destaque) 100%);
-
-    /* Tipografia */
-    --fonte-titulos: 'Cormorant Garamond', serif;
-    --fonte-corpo: 'Montserrat', sans-serif;
-
-    /* Espaçamento e Bordas (Suavidade) */
-    --espacamento-padrao: 20px;
-    --borda-arredondada: 15px; /* Bordas suaves como no Figma */
-    --borda-card: 20px;
-    
-    /* Transições (Fluidez) */
-    --transicao-suave: all 0.4s ease-in-out;
+    --off-white: #FAFAF8;
+    --preto-luxo: #1A1A1A;
+    --rosa-seco: #D4A396;
+    --rosa-glow: #E8CAC1;
+    --fonte-serif: 'Cormorant Garamond', serif;
+    --fonte-sans: 'Montserrat', sans-serif;
+    --transicao: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 3. Reset Básico (Para consistência) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--fonte-corpo);
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto-escuro);
-    line-height: 1.6;
-    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+    background-color: var(--off-white);
+    font-family: var(--fonte-sans);
+    color: var(--preto-luxo);
+    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transicao-suave);
+/* --- HEADER DINÂMICO --- */
+.header-premium {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px 0;
+    transition: var(--transicao);
 }
 
-ul {
-    list-style: none;
+.header-premium.sticky {
+    background: rgba(250, 250, 248, 0.95);
+    padding: 15px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
 }
 
-img {
-    max-width: 100%;
-    display: block;
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* 4. Estilos Utilitários (Para usar no HTML) */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--espacamento-padrao);
-}
-
-/* Títulos Premium */
-.titulo-premium {
-    font-family: var(--fonte-titulos);
-    font-weight: 700;
+.titulo-logo {
+    font-family: var(--fonte-serif);
+    font-size: 2rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--cor-texto-escuro);
-    margin-bottom: 10px;
 }
 
-.subtitulo-premium {
-    font-family: var(--fonte-titulos);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--cor-primaria);
-    font-size: 1.2rem;
-    margin-bottom: var(--espacamento-padrao);
+.nav-menu ul {
+    display: flex;
+    gap: 30px;
 }
 
-/* Botão Principal Estilizado (Conforme Figma/Prompt) */
-.btn-premium {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: var(--cor-texto-escuro); /* Preto como no Figma image_5.png */
-    color: #FFF;
-    font-family: var(--fonte-corpo);
+.nav-menu a {
+    font-size: 0.9rem;
     text-transform: uppercase;
-    font-weight: 600;
     letter-spacing: 1px;
-    border-radius: 50px; /* Totalmente arredondado */
-    transition: var(--transicao-suave);
-    border: 1px solid var(--cor-texto-escuro);
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--preto-luxo);
+}
+
+.nav-menu a:hover {
+    color: var(--rosa-seco);
+}
+
+/* --- HERO SECTION (O GLOW) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #ffffff 0%, #fafaf8 100%);
+    position: relative;
+}
+
+.titulo-principal {
+    font-family: var(--fonte-serif);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.titulo-principal span {
+    font-style: italic;
+    color: var(--rosa-seco);
+    font-weight: 400;
+}
+
+.hero-desc {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* --- BOTÕES PREMIUM --- */
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-premium {
+    padding: 18px 45px;
+    background: var(--preto-luxo);
+    color: white;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: var(--transicao);
+    border: 1px solid var(--preto-luxo);
 }
 
 .btn-premium:hover {
-    background-color: transparent;
-    color: var(--cor-texto-escuro);
+    background: transparent;
+    color: var(--preto-luxo);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Animação Base para o Efeito de Rolagem (Smooth Reveal) */
+.btn-whatsapp-hero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #25D366;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.btn-whatsapp-hero:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(37, 211, 102, 0.2);
+}
+
+/* --- GRID DE PRODUTOS (ESTILO INSTAGRAM PREMIUM) --- */
+.colecao {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-premium {
+    font-family: var(--fonte-serif);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.subtitulo-premium {
+    color: var(--rosa-seco);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.produto-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #fff;
+    transition: var(--transicao);
+}
+
+.img-container {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.produto-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay-card {
+    position: absolute;
+    inset: 0;
+    background: rgba(212, 163, 150, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transicao);
+    backdrop-filter: blur(3px);
+}
+
+.overlay-card span {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.produto-card:hover .overlay-card {
+    opacity: 1;
+}
+
+.produto-info {
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.produto-info h3 {
+    font-family: var(--fonte-serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* --- WHATSAPP FLOAT --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 999;
+    transition: var(--transicao);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* --- ANIMAÇÕES DE REVELAÇÃO --- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .hero-btns { flex-direction: column; }
+    .btn-whatsapp-hero { margin-left: 0; margin-top: 20px; }
 }
