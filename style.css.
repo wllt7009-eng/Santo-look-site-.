@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SANTO LOOK - CSS PREMIUM (GLOW & FLUID)
+   SANTO LOOK - CSS PREMIUM ATUALIZADO
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
@@ -7,7 +7,7 @@
 :root {
     --off-white: #FAFAF8;
     --preto-luxo: #1A1A1A;
-    --rosa-seco: #D4A396;
+    --rosa-seco: #D4A396; /* Cor elegante do logo */
     --rosa-glow: #E8CAC1;
     --fonte-serif: 'Cormorant Garamond', serif;
     --fonte-sans: 'Montserrat', sans-serif;
@@ -25,24 +25,25 @@ body {
     background-color: var(--off-white);
     font-family: var(--fonte-sans);
     color: var(--preto-luxo);
-    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* --- HEADER DINÂMICO --- */
+/* --- HEADER --- */
 .header-premium {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 30px 0;
-    transition: var(--transicao);
+    padding: 20px 0;
+    background: rgba(250, 250, 248, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 163, 150, 0.2);
 }
 
-.header-premium.sticky {
-    background: rgba(250, 250, 248, 0.95);
-    padding: 15px 0;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    backdrop-filter: blur(10px);
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .header-content {
@@ -51,32 +52,26 @@ body {
     align-items: center;
 }
 
-.titulo-logo {
-    font-family: var(--fonte-serif);
-    font-size: 2rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
 .nav-menu ul {
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    list-style: none;
 }
 
 .nav-menu a {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
     text-decoration: none;
     color: var(--preto-luxo);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicao);
 }
 
 .nav-menu a:hover {
     color: var(--rosa-seco);
 }
 
-/* --- HERO SECTION (O GLOW) --- */
+/* --- HERO SECTION --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -84,110 +79,86 @@ body {
     justify-content: center;
     text-align: center;
     background: radial-gradient(circle at center, #ffffff 0%, #fafaf8 100%);
-    position: relative;
+    padding-top: 80px;
 }
 
 .titulo-principal {
     font-family: var(--fonte-serif);
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    line-height: 1;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .titulo-principal span {
     font-style: italic;
     color: var(--rosa-seco);
     font-weight: 400;
+    text-transform: lowercase;
 }
 
-.hero-desc {
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 40px;
-    opacity: 0.8;
-}
-
-/* --- BOTÕES PREMIUM --- */
 .hero-btns {
     display: flex;
     gap: 20px;
     justify-content: center;
-    align-items: center;
+    margin-top: 30px;
 }
 
+/* --- BOTÕES --- */
 .btn-premium {
-    padding: 18px 45px;
+    padding: 15px 35px;
     background: var(--preto-luxo);
     color: white;
     border-radius: 50px;
+    text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     letter-spacing: 2px;
     transition: var(--transicao);
-    border: 1px solid var(--preto-luxo);
 }
 
 .btn-premium:hover {
-    background: transparent;
-    color: var(--preto-luxo);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: var(--rosa-seco);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 163, 150, 0.3);
 }
 
 .btn-whatsapp-hero {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: #25D366;
-    font-weight: 600;
     text-decoration: none;
-    transition: var(--transicao);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.btn-whatsapp-hero:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(37, 211, 102, 0.2);
-}
-
-/* --- GRID DE PRODUTOS (ESTILO INSTAGRAM PREMIUM) --- */
+/* --- GRID DE PRODUTOS --- */
 .colecao {
-    padding: 100px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.titulo-premium {
-    font-family: var(--fonte-serif);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-}
-
-.subtitulo-premium {
-    color: var(--rosa-seco);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    display: block;
-    margin-bottom: 10px;
+    padding: 80px 0;
 }
 
 .produtos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .produto-card {
-    position: relative;
+    background: white;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 15px;
-    background: #fff;
     transition: var(--transicao);
+    border: 1px solid rgba(212, 163, 150, 0.1);
+}
+
+.produto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
 .img-container {
+    width: 100%;
     aspect-ratio: 3/4;
     overflow: hidden;
 }
@@ -196,87 +167,45 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1.2s ease;
+    transition: transform 1.5s ease;
 }
 
 .produto-card:hover img {
     transform: scale(1.1);
 }
 
-.overlay-card {
-    position: absolute;
-    inset: 0;
-    background: rgba(212, 163, 150, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transicao);
-    backdrop-filter: blur(3px);
-}
-
-.overlay-card span {
-    background: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.produto-card:hover .overlay-card {
-    opacity: 1;
-}
-
-.produto-info {
-    padding: 20px 10px;
-    text-align: center;
-}
-
-.produto-info h3 {
-    font-family: var(--fonte-serif);
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-/* --- WHATSAPP FLOAT --- */
+/* --- WHATSAPP FLUTUANTE --- */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #25D366;
+    background: #25D366;
     color: white;
     width: 60px;
     height: 60px;
-    border-radius: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-    z-index: 999;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    text-decoration: none;
     transition: var(--transicao);
 }
 
 .whatsapp-float:hover {
-    transform: translateY(-5px) scale(1.1);
+    transform: scale(1.1) rotate(10deg);
 }
 
-/* --- ANIMAÇÕES DE REVELAÇÃO --- */
+/* --- ANIMAÇÃO REVEAL --- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease-out;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .nav-menu { display: none; }
-    .hero-btns { flex-direction: column; }
-    .btn-whatsapp-hero { margin-left: 0; margin-top: 20px; }
 }
