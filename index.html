@@ -3,44 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santo Look - Peças Exclusivas para Mulheres Autênticas</title>
+    <title>Santo Look - Moda Feminina Premium</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header class="header-premium">
         <div class="container header-content">
-            
             <div class="logo">
-                <a href="#">
-                    <h1 class="titulo-logo">Santo Look</h1>
-                </a>
+                <h1 class="titulo-logo">Santo Look</h1>
             </div>
-
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#colecao">Coleção</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-
         </div>
     </header>
 
     <main>
-        <section id="inicio" style="height: 100vh; background: #eee; display: flex; align-items: center; justify-content: center;">
-            <p>A seção Hero entrará aqui no próximo passo.</p>
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+                <span class="subtitulo-premium reveal">Curadoria Lais Moura</span>
+                <h2 class="titulo-principal reveal">Peças exclusivas para <br><span>mulheres autênticas</span></h2>
+                <p class="hero-desc reveal">Onde o luxo encontra a sua melhor versão.</p>
+                
+                <div class="hero-btns reveal">
+                    <a href="#colecao" class="btn-premium">Ver Coleção</a>
+                    <a href="https://wa.me/message/NJDBXH5AEEGTN1" class="btn-whatsapp-hero" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chame no Zap
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="colecao" id="colecao">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="subtitulo-premium">Trend Alert</span>
+                    <h2 class="titulo-premium">Nossa Coleção ✨</h2>
+                </div>
+
+                <div class="produtos-grid">
+                    
+                    <div class="produto-card reveal">
+                        <div class="img-container">
+                            <img src="images/vestido-vermelho-premium.jpg" alt="Vestido Vermelho">
+                            <div class="overlay-card"><span>Santo Look Style</span></div>
+                        </div>
+                        <div class="produto-info">
+                            <h3>Vestido Passion Red</h3>
+                        </div>
+                    </div>
+
+                    <div class="produto-card reveal">
+                        <div class="img-container">
+                            <img src="images/vestido-floral-rosa.jpg" alt="Vestido Floral">
+                            <div class="overlay-card"><span>Fresh Collection</span></div>
+                        </div>
+                        <div class="produto-info">
+                            <h3>Maxi Floral Romântico</h3>
+                        </div>
+                    </div>
+
+                    <div class="produto-card reveal">
+                        <div class="img-container">
+                            <img src="images/conjunto-renda-preto.jpg" alt="Conjunto Renda">
+                            <div class="overlay-card"><span>Glamour Night</span></div>
+                        </div>
+                        <div class="produto-info">
+                            <h3>Conjunto Lace Luxury</h3>
+                        </div>
+                    </div>
+
+                    <div class="produto-card reveal">
+                        <div class="img-container">
+                            <img src="images/vestido-preto-curto.jpg" alt="Vestido Preto">
+                            <div class="overlay-card"><span>Essential</span></div>
+                        </div>
+                        <div class="produto-info">
+                            <h3>Little Black Dress</h3>
+                        </div>
+                    </div>
+
+                    <div class="produto-card reveal">
+                        <div class="img-container">
+                            <img src="images/blazer-bordo.jpg" alt="Blazer Santo Look">
+                            <div class="overlay-card"><span>Power Look</span></div>
+                        </div>
+                        <div class="produto-info">
+                            <h3>Blazer Velvet Wine</h3>
+                        </div>
+                    </div>
+
+                    <div class="produto-card reveal">
+                        <div class="img-container">
+                            <img src="images/tshirt-renda.jpg" alt="T-shirt Renda">
+                            <div class="overlay-card"><span>Chic Casual</span></div>
+                        </div>
+                        <div class="produto-info">
+                            <h3>T-shirt Detail Lace</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <div class="container reveal">
+                <span class="subtitulo-premium">Nossa História</span>
+                <h2 class="titulo-premium">Sobre Nós</h2>
+                <p>A Santo Look é fruto da curadoria cuidadosa de Lais Moura, trazendo o que há de mais moderno e sofisticado para Sete Lagoas.</p>
+                <p><strong>Localização:</strong> Rua Teófilo Otoni, 1131, Centro - Sete Lagoas/MG</p>
+            </div>
         </section>
     </main>
+
+    <a href="https://wa.me/message/NJDBXH5AEEGTN1" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
