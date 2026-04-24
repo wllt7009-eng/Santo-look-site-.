@@ -1,0 +1,211 @@
+/* ==========================================================================
+   SANTO LOOK - CSS PREMIUM ATUALIZADO
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --off-white: #FAFAF8;
+    --preto-luxo: #1A1A1A;
+    --rosa-seco: #D4A396; /* Cor elegante do logo */
+    --rosa-glow: #E8CAC1;
+    --fonte-serif: 'Cormorant Garamond', serif;
+    --fonte-sans: 'Montserrat', sans-serif;
+    --transicao: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--off-white);
+    font-family: var(--fonte-sans);
+    color: var(--preto-luxo);
+    line-height: 1.6;
+}
+
+/* --- HEADER --- */
+.header-premium {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background: rgba(250, 250, 248, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 163, 150, 0.2);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--preto-luxo);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicao);
+}
+
+.nav-menu a:hover {
+    color: var(--rosa-seco);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #ffffff 0%, #fafaf8 100%);
+    padding-top: 80px;
+}
+
+.titulo-principal {
+    font-family: var(--fonte-serif);
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    line-height: 1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.titulo-principal span {
+    font-style: italic;
+    color: var(--rosa-seco);
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* --- BOTÕES --- */
+.btn-premium {
+    padding: 15px 35px;
+    background: var(--preto-luxo);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    transition: var(--transicao);
+}
+
+.btn-premium:hover {
+    background: var(--rosa-seco);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 163, 150, 0.3);
+}
+
+.btn-whatsapp-hero {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #25D366;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- GRID DE PRODUTOS --- */
+.colecao {
+    padding: 80px 0;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transicao);
+    border: 1px solid rgba(212, 163, 150, 0.1);
+}
+
+.produto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.img-container {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.produto-card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- WHATSAPP FLUTUANTE --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* --- ANIMAÇÃO REVEAL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
